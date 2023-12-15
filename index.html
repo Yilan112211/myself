@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>激活码兑换</title>
+    <style>
+        /* 定位元素样式 */
+        .positioned-element {
+            position: absolute;
+            top: 36%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 按钮样式 */
+        #generateButton {
+            width: 200px; /* 容器宽度 */
+            height: 30px; /* 容器高度 */
+            padding: 10px;
+            background-color: #d3a74a; /* 按钮背景色，根据需要调整 */
+            color: #f5e1af; /* 按钮文字颜色 */
+            border: none;
+            border-radius: 25px; /* 边框圆角，根据需要调整 */
+            cursor: pointer;
+            font-size: 14px; /* 文字大小，根据需要调整 */
+        }
+        /* 标题样式 */
+        h2 {
+            color: #9a692f; /* 标题文字颜色 */
+            font-size: 24px; /* 标题文字大小 */
+            text-align: center; /* 标题居中对齐 */
+            margin: 0; /* 移除默认的外边距 */
+            position: fixed; /* 固定位置 */
+            top: 10%; /* 距顶部的百分比 */
+            left: 50%; /* 居中 */
+            transform: translateX(-50%); /* 水平居中 */
+        }
+
+        /* 背景图片样式 */
+        body {
+            background-image: url('aiqiyitupian.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="positioned-element">
+        <h2></h2>
+        <button id="generateButton" onclick="generateCode()">立即生成</button>
+    </div>
+
+    <script>
+        function generateCode() {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            var code = '';
+            for (var i = 0; i < 16; i++) {
+                code += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            var formattedCode = code.substring(0, 4) + '-' + code.substring(4, 8) + '-' + code.substring(8, 12) + '-' + code.substring(12, 16);
+            alert('兑换码：' + formattedCode +'。请在爱奇艺兑换VIP'+'\n'+'                                                  确认'); // 在跳出框中显示串码
+
+        }
+    </script>
+</body>
+</html>
